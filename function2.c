@@ -26,6 +26,7 @@ void	sa(t_stack **a)
 	tmp->next = (*a);
 	(*a) = tmp;
 	write(1, "sa\n", 3);
+	g_global++;
 }
 
 void	sb(t_stack **a)
@@ -39,6 +40,7 @@ void	sb(t_stack **a)
 	tmp->next = (*a);
 	(*a) = tmp;
 	write(1, "sb\n", 3);
+	g_global++;
 }
 
 void	pa(t_stack **a, t_stack **b)
@@ -55,20 +57,16 @@ void	pa(t_stack **a, t_stack **b)
 	c = (*b);
 	(*b) = c;
 	write(1, "pa\n", 3);
+	g_global++;
 }
 
 void	pb(t_stack **a, t_stack **b)
 {
-	t_stack	*s;
-	t_stack	*c;
+	t_stack	*tmp;
 
-	s = malloc(sizeof(t_stack));
-	s->data = (*a)->data;
-	s->next = (*b);
-	(*b) = s;
-	c = malloc(sizeof(t_stack));
-	(*a) = (*a)->next;
-	c = (*a);
-	(*a) = c;
-	write(1, "pb\n", 3);
+	tmp = *a;
+	*a = (*a)->next;
+	tmp->next = *b;
+	*b = tmp;
+	g_global++;
 }

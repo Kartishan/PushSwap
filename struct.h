@@ -19,6 +19,7 @@ typedef struct s_stack
 	struct s_stack	*next;
 	int				index;
 }	t_stack;
+int		g_global;
 int		ft_space(const char *str);
 int		ft_atoi(const char *str);
 int		counter(t_stack *a);
@@ -36,5 +37,6 @@ void	rb(t_stack **a);
 void	rra(t_stack **a);
 void	rrb(t_stack **a);
 void	rrr(t_stack **a, t_stack **b);
-void	insertion_sort(t_stack **a, t_stack **b, int hight);
+void	insertion_sort(t_stack **a, t_stack **b);
+int		direct_find_elem(t_stack *s, int elem);
 #endif

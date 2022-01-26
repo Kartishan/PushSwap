@@ -80,15 +80,32 @@ int	main(int argc, char **argv)
 	b = NULL;
 	argc--;
 	c = 0;
+	g_global = 0;
+	int i = 5;
 	while (argc > 0)
 	{
 		push(&a, ft_atoi(argv[argc]), c);
 		c++;
 		argc--;
 	}
-	//swap(&a);
-	insertion_sort(&a, &b, c);
+	// printf("%d", direct_find_elem(a, 0));
+	insertion_sort(&a, &b);
+	printf("\n");
 	show(a);
-	//show(b);
+	show(b);
+	printf("nASAHA GLOBAL %d\n", g_global);
 	return (0);
 }
+	//c = hight(&a);
+	//printf("chekaem %d ", c);
+	// while (i > 0)
+	// {
+	// 	push(&b, i, c);
+	// 	c++;
+	// 	i--;
+	// }
+	//swap(&a);
+	//insertion_sort(&a, &b, c);
+	//rrr(&a,&b);
+	//show(a);
+	//ra(&a);

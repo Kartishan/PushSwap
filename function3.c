@@ -30,6 +30,7 @@ void	ra(t_stack **a)
 	(*a)->next = NULL;
 	(*a) = second;
 	write(1, "ra\n", 3);
+	g_global++;
 }
 
 void	rb(t_stack **a)
@@ -47,6 +48,7 @@ void	rb(t_stack **a)
 	(*a)->next = NULL;
 	(*a) = second;
 	write(1, "rb\n", 3);
+	g_global++;
 }
 
 void	rra(t_stack **a)
@@ -67,6 +69,7 @@ void	rra(t_stack **a)
 	(*a) = tmp;
 	prev->next = NULL;
 	write(1, "rra\n", 4);
+	g_global++;
 }
 
 void	rrb(t_stack **a)
@@ -87,6 +90,7 @@ void	rrb(t_stack **a)
 	(*a) = tmp;
 	prev->next = NULL;
 	write(1, "rrb\n", 4);
+	g_global++;
 }
 
 void	rrr(t_stack **a, t_stack **b)
@@ -94,4 +98,5 @@ void	rrr(t_stack **a, t_stack **b)
 	rra(a);
 	rrb(b);
 	write(1, "rrr\n", 4);
+	g_global++;
 }
