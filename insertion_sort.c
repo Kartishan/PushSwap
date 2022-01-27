@@ -70,17 +70,17 @@ void our_rr(t_stack **a, t_stack **b, int c)
 	int	i;
 
 	i = 0;
-	while (i < c)
+	while (i > c)
 	{
 		rrb(&(*b));
-		i++;
+		i--;
 	}
 	pb(&(*a), &(*b));
 	i = 0;
-	while (i < c + 1)
+	while (i > c - 1)
 	{
 		rb(&(*b));
-		i++;
+		i--;
 	}
 }
 
@@ -114,7 +114,7 @@ void	insertion_sort(t_stack **a, t_stack **b)
 	while (*a != NULL)
 	{
 
-		printf("tut 1tmp: %d\n", tmp);
+		//printf("tut 1tmp: %d\n", tmp);
 		vibor(&(*a), &(*b));
 	}
 	

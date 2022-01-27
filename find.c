@@ -26,10 +26,7 @@ int	direct_find_elem(t_stack *s, int elem)
 	}
 	if (x < -y)
 		return (x);
-	else if (x > -y)
-		return (y);
-	else
-		return (0);
+	return (y);
 }
 //    обычные столько же
 // 	int	i;

@@ -69,4 +69,5 @@ void	pb(t_stack **a, t_stack **b)
 	tmp->next = *b;
 	*b = tmp;
 	g_global++;
+	write(1, "pb\n", 3);
 }

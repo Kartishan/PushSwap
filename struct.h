@@ -39,4 +39,8 @@ void	rrb(t_stack **a);
 void	rrr(t_stack **a, t_stack **b);
 void	insertion_sort(t_stack **a, t_stack **b);
 int		direct_find_elem(t_stack *s, int elem);
+void	sort3elem(t_stack **a, t_stack **b);
+int		searchmin(t_stack **a);
+void	sort4elem(t_stack **a, t_stack **b);
+void	sort5elem(t_stack **a, t_stack **b);
 #endif
