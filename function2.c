@@ -43,6 +43,14 @@ void	sb(t_stack **a)
 	g_global++;
 }
 
+void	ss(t_stack **a, t_stack **b)
+{
+	sa_without(a);
+	sb_without(b);
+	write(1, "ss\n", 3);
+	g_global++;
+}
+
 void	pa(t_stack **a, t_stack **b)
 {
 	t_stack	*s;

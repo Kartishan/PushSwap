@@ -89,7 +89,8 @@ int	main(int argc, char **argv)
 	}
 	//printf("\n");
 	//insertion_sort(&a, &b);
-	sort3elemwithparam(&a,&b);
+	//sort3elemwithparam(&a,&b);
+	sort4elemwithparam(&a, &b);
 	//modified_insertion_sort;
 	//prevsort(a,&b,c);
 	show(a);
