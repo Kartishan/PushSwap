@@ -89,9 +89,11 @@ int	main(int argc, char **argv)
 	}
 	//printf("\n");
 	insertion_sort(&a, &b);
+	//modified_insertion_sort;
+	//prevsort(a,&b,c);
 	//show(a);
 	//show(b);
-	//printf("nASAHA GLOBAL %d\n", g_global);
+	printf("nASAHA GLOBAL %d\n", g_global);
 	return (0);
 }
 	//c = hight(&a);
