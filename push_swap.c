@@ -88,10 +88,11 @@ int	main(int argc, char **argv)
 		argc--;
 	}
 	//printf("\n");
-	insertion_sort(&a, &b);
+	//insertion_sort(&a, &b);
+	sort3elemwithparam(&a,&b);
 	//modified_insertion_sort;
 	//prevsort(a,&b,c);
-	//show(a);
+	show(a);
 	//show(b);
 	printf("nASAHA GLOBAL %d\n", g_global);
 	return (0);

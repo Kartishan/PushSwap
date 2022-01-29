@@ -33,6 +33,7 @@ void	sort3elemwithparam(t_stack **a, t_stack **b)
 		ra(a);
 		sa(a);
 		rra(a);
+		sa(a);
 		// pb(a, b);
 		// ra(a);
 		// pb(a, b);
@@ -45,7 +46,7 @@ void	sort3elemwithparam(t_stack **a, t_stack **b)
 		sa(a);
 		ra(a);
 		sa(a);
-		rr(a);
+		rra(a);
 		// 3 1 2 5
 	}
 }

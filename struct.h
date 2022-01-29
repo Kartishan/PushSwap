@@ -60,4 +60,5 @@ int		search_without(t_stack *a, t_stack *b);
 void	modified_insertion_sort(t_stack **a, t_stack **b);
 //int		prevsort(t_stack *a, t_stack **b, int sr);
 void	analise(t_stack **a, t_stack **b, int c);
+void	sort3elemwithparam(t_stack **a, t_stack **b);
 #endif
