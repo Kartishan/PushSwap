@@ -1,24 +1,26 @@
-NAME =  a123
+NAME =  push_swap
 
-SRCS =	function1.c\
-		function2.c function3.c push_swap.c
+SRCS =	function1.c function2.c function3.c push_swap.c \
+		find.c insertion_sort.c insertion_sort_without.c insertion_sort.c\
+		insertion_sort_without.c modified_isertion_sort.c newsort.c\
+		sort3withparam.c sort4withparam.c sortfor2elem.c sortfor3elem.c\
+		sortfor4elem.c utilis_without.c utilis_without2.c modified_isertion_sort.c\
+		struct.h
 HEADER = struct.h
 
 OBJ	=	$(SRCS:%.c=%.o)
+CFLAGS	=	-Wall -Wextra -Werror $(HEADER)
+
+.PHONY	:	all clean fclean re
 
 
-CFLAGS	=	-Wall -Wextra -Werror
-
-all		:	$(NAME)
-
-$(NAME)	: $(OBJ) $(HEADER)
-		-o $(NAME) $?
-%.o : %.c
+all	:   $(NAME)
+$(NAME) : $(OBJ) ${HEADER}
+	gcc $(CFLAGS) $(OBJ) -o $@
+%.o : %.c ${HEADER}
 	gcc $(CFLAGS) -c $< -o $@
 clean	:
-	rm -f $(OBJ)
+	rm -rf $(OBJ)
 fclean	:	clean
-	rm -f $(NAME)
+	rm -rf $(NAME)
 re		:	fclean all
-
-.PHONY	:	all clean fclean re 

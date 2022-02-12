@@ -5,17 +5,6 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pwildcat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/25 16:21:35 by pwildcat          #+#    #+#             */
-/*   Updated: 2022/01/25 16:22:51 by pwildcat         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: pwildcat <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 16:02:00 by pwildcat          #+#    #+#             */
 /*   Updated: 2022/01/25 16:02:02 by pwildcat         ###   ########.fr       */
 /*                                                                            */
@@ -76,8 +65,8 @@ int	main(int argc, char **argv)
 	t_stack	*b;
 	int		c;
 
-	a = NULL;
-	b = NULL;
+	a = input_memory();
+	b = input_memory();
 	argc--;
 	c = 0;
 	g_global = 0;
@@ -87,27 +76,9 @@ int	main(int argc, char **argv)
 		c++;
 		argc--;
 	}
-	//printf("\n");
-	//insertion_sort(&a, &b);
-	//sort3elemwithparam(&a,&b);
-	sort4elemwithparam(&a, &b);
-	//modified_insertion_sort;
-	//prevsort(a,&b,c);
+	QuickSort(&a, &b);
 	show(a);
-	//show(b);
-	printf("nASAHA GLOBAL %d\n", g_global);
+	free_memory(&a);
+	free_memory(&b);
 	return (0);
 }
-	//c = hight(&a);
-	//printf("chekaem %d ", c);
-	// while (i > 0)
-	// {
-	// 	push(&b, i, c);
-	// 	c++;
-	// 	i--;
-	// }
-	//swap(&a);
-	//insertion_sort(&a, &b, c);
-	//rrr(&a,&b);
-	//show(a);
-	//ra(&a);
