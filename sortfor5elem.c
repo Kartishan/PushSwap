@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "struct.h"
-//#include <unistd.h>
+#include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -19,7 +19,7 @@ void	sort5elem(t_stack **a, t_stack **b)
 {
 	int	i;
 
-	i = direct_find_elem((*a), searchmin(a));
+	i = direct_find_elem(*a, searchmin(a));
 	while (i > 0)
 	{
 		ra(a);

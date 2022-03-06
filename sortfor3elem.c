@@ -38,6 +38,6 @@ void	sort3elem(t_stack **a, t_stack **b)
 	}
 	else if ((*a)->data < sec && sec > t && t < (*a)->data)
 		sa(a);
-	else if ((*a)->data > sec && (*a)->data > sec && sec < t)
+	else if ((*a)->data > sec && sec < t)
 		ra(a);
 }

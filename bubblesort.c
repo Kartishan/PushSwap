@@ -8,7 +8,7 @@ int	findindex(t_stack **s, int n)
 	t_stack	*temp;
 
 	if (counter(s) < n)
-		n = counter((s));
+		n = counter(s);
 	if ((*s) == NULL || n == 0)
 		return (-1);
 	if (n == 1)
@@ -17,7 +17,7 @@ int	findindex(t_stack **s, int n)
 	temp = (*s)->next;
 	while (n > 1)
 	{
-		if (temp->index < index)
+		if (temp-> index < index)
 			index = temp->index;
 		n--;
 		temp = temp->next;
@@ -34,7 +34,7 @@ void	bubblesort(t_stack **a, t_stack **b, int an)
 	i = 0;
 	while (!asort(a, an - bn))
 	{
-		while (!asort(a, an -bn))
+		while (!asort(a, an - bn))
 		{
 			if ((*a)->data > (*a)->next->data)
 				sa(a);
@@ -54,4 +54,19 @@ void	bubblesort(t_stack **a, t_stack **b, int an)
 		i++;
 	}
 	paforn(a, b, --i);
+}
+
+void	analiseforsmall(t_stack **a, t_stack **b, int n)
+{
+	if (n <= 1)
+		return ;
+	if (n == 2 && !sort(a))
+		sa(a);
+	if (n == 3)
+		sort3elem(a, b);
+	if (n == 4)
+		sort4elem(a, b);
+	if (n == 5)
+		sort5elem(a, b);
+	return ;
 }

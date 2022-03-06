@@ -35,7 +35,7 @@ void	sort4elem(t_stack **a, t_stack **b)
 {
 	int	i;
 
-	i = direct_find_elem((*a), searchmin(a));
+	i = direct_find_elem(*a, searchmin(a));
 	while (i > 0)
 	{
 		ra(a);

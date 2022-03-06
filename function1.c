@@ -6,7 +6,7 @@
 /*   By: pwildcat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 16:20:25 by pwildcat          #+#    #+#             */
-/*   Updated: 2022/02/25 19:14:33 by pwildcat         ###   ########.fr       */
+/*   Updated: 2022/01/25 16:20:57 by pwildcat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,8 +86,6 @@ void	swap(t_stack **a)
 {
 	t_stack		*tmp;
 
-	if (counter(a) < 2)
-		return ;
 	tmp = (*a)->next;
 	(*a)->next = tmp->next;
 	tmp->next = (*a);

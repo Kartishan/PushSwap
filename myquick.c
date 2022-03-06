@@ -3,24 +3,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int	ace(t_stack **a, int pivotu, int n)
-{
-	t_stack	*temp;
-
-	if (counter(a) < n)
-		n = counter(a);
-	if (n == 0 || n == 1)
-		return (0);
-	temp = (*a);
-	while (n-- > 0)
-	{
-		if (temp->data <= pivotu)
-			return (1);
-		temp = temp->next;
-	}
-	return (0);
-}
-
 void	QuickA(t_stack **a, t_stack **b, int n, int flag)
 {
 	int	steps;
@@ -33,7 +15,7 @@ void	QuickA(t_stack **a, t_stack **b, int n, int flag)
 	ac = n;
 	bc = 0;
 	pivotu = pivot(a, n);
-	while (n-- > 0 && ace(a, pivotu, ac))
+	while (n-- > 0 && acheck(a, pivotu, ac))
 	{
 		if ((*a)->data <= pivotu)
 		{
@@ -56,6 +38,24 @@ void	QuickA(t_stack **a, t_stack **b, int n, int flag)
 	else if (flag > 0 && !asort(a, ac))
 		QuickA(a, b, ac, flag);
 	QuickB(a, b, bc, flag);
+}
+
+int	acheck(t_stack **a, int pivotu, int n)
+{
+	t_stack	*temp;
+
+	if (counter(a) < n)
+		n = counter(a);
+	if (n == 0 || n == 1)
+		return (0);
+	temp = (*a);
+	while (n-- > 0)
+	{
+		if (temp->data <= pivotu)
+			return (1);
+		temp = temp->next;
+	}
+	return (0);
 }
 
 void	checkb(t_stack **a, t_stack **b, int n)
@@ -93,7 +93,7 @@ void	QuickB(t_stack **a, t_stack **b, int n, int flag)
 	int	i;
 
 	i = 0;
-	if (bsort(b, n) || n == 2)
+	if (bsort(b, n) || n < 3)
 		return (checkb(a, b, n));
 	ac = 0;
 	bc = n;
@@ -129,19 +129,4 @@ void	QuickSort(t_stack **a, t_stack **b)
 		analiseforsmall(a, b, counter(a));
 	else
 		QuickA(a, b, counter(a), 0);
-}
-
-void	analiseforsmall(t_stack **a, t_stack **b, int n)
-{
-	if (n <= 1)
-		return ;
-	if (n == 2 && !sort(a))
-		sa(a);
-	if (n == 3)
-		sort3elem(a, b);
-	if (n == 4)
-		sort4elem(a, b);
-	if (n == 5)
-		sort5elem(a, b);
-	return ;
 }
