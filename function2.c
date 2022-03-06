@@ -6,7 +6,7 @@
 /*   By: pwildcat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 16:21:03 by pwildcat          #+#    #+#             */
-/*   Updated: 2022/01/25 16:21:14 by pwildcat         ###   ########.fr       */
+/*   Updated: 2022/02/25 19:15:53 by pwildcat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	sa(t_stack **a)
 {
 	t_stack		*tmp;
 
-	if (counter(*a) < 2)
+	if (counter(a) < 2)
 		return ;
 	tmp = (*a)->next;
 	(*a)->next = tmp->next;
@@ -33,7 +33,7 @@ void	sb(t_stack **a)
 {
 	t_stack		*tmp;
 
-	if (counter(*a) < 2)
+	if (counter(a) < 2)
 		return ;
 	tmp = (*a)->next;
 	(*a)->next = tmp->next;

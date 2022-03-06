@@ -7,7 +7,7 @@ void	sa_without(t_stack **a)
 {
 	t_stack		*tmp;
 
-	if (counter(*a) < 2)
+	if (counter(a) < 2)
 		return ;
 	tmp = (*a)->next;
 	(*a)->next = tmp->next;
@@ -19,7 +19,7 @@ void	sb_without(t_stack **a)
 {
 	t_stack		*tmp;
 
-	if (counter(*a) < 2)
+	if (counter(a) < 2)
 		return ;
 	tmp = (*a)->next;
 	(*a)->next = tmp->next;

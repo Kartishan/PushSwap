@@ -2,13 +2,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int	direct_find_elem(t_stack *s, int elem)
+int		direct_find_elem(t_stack *s, int elem)
 {
 	int		x;
 	int		y;
 	t_stack	*temp;
 
-	if (s == NULL || counter(s) == 0)
+	if (s == NULL || counter(&s) <= 1)
 		return (0);
 	x = 0;
 	y = 0;
@@ -25,5 +25,6 @@ int	direct_find_elem(t_stack *s, int elem)
 	}
 	if (x < -y)
 		return (x);
-	return (y);
+	else
+		return (y);
 }

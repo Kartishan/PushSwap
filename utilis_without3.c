@@ -19,7 +19,7 @@ int	sort(t_stack **s)
 {
 	t_stack	*temp;
 
-	if (counter((*s)) == 0 || counter((*s)) == 1)
+	if (counter((s)) == 0 || counter((s)) == 1)
 		return (1);
 	temp = (*s);
 	while (temp->next != NULL && temp->data < temp->next->data)

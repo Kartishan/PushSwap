@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void	init_index(t_stack *s)
+void	init_index(t_stack **s)
 {
 	t_stack	*min;
 	t_stack	*tmp;
@@ -13,7 +13,7 @@ void	init_index(t_stack *s)
 	while (i <= counter(s))
 	{
 		min = NULL;
-		tmp = s;
+		tmp = (*s);
 		while (tmp != NULL && tmp->index != -1)
 			tmp = tmp->next;
 		if (tmp != NULL)

@@ -6,7 +6,7 @@
 /*   By: pwildcat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/22 17:02:48 by pwildcat          #+#    #+#             */
-/*   Updated: 2022/01/25 16:26:08 by pwildcat         ###   ########.fr       */
+/*   Updated: 2022/02/25 16:54:14 by pwildcat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ typedef struct s_stack
 int		g_global;
 int		ft_space(const char *str);
 int		ft_atoi(const char *str);
-int		counter(t_stack *a);
-void	push(t_stack **a, int b, int c);
+int		counter(t_stack **a);
+void	push(t_stack **a, int b);
 void	swap(t_stack **a);
 void	rotate(t_stack **a);
 void	reversrotate(t_stack **a);
@@ -80,4 +80,6 @@ void	bubblesort(t_stack **a, t_stack **b, int an);
 int		pivot(t_stack **s, int n);
 int		asort(t_stack **s, int n);
 int		bsort(t_stack **s, int n);
+void	analiseforsmall(t_stack **a, t_stack **b, int n);
+void	init_index(t_stack **s);
 #endif

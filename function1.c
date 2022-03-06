@@ -6,7 +6,7 @@
 /*   By: pwildcat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 16:20:25 by pwildcat          #+#    #+#             */
-/*   Updated: 2022/01/25 16:20:57 by pwildcat         ###   ########.fr       */
+/*   Updated: 2022/02/25 19:14:33 by pwildcat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,26 +54,30 @@ int	ft_atoi(const char *str)
 	return ((int)c * n);
 }
 
-int	counter(t_stack *a)
+int	counter(t_stack **a)
 {
-	int	b;
+	int		b;
+	t_stack	*tmp;
 
 	b = 0;
-	while (a != NULL)
+	if ((*a) == NULL)
+		return (0);
+	tmp = (*a);
+	while (tmp != NULL)
 	{
 		b++;
-		a = a->next;
+		tmp = tmp->next;
 	}
 	return (b);
 }
 
-void	push(t_stack **a, int b, int c)
+void	push(t_stack **a, int b)
 {
 	t_stack	*s;
 
 	s = malloc(sizeof(t_stack));
 	s->data = b;
-	s->index = c;
+	s->index = -1;
 	s->next = (*a);
 	(*a) = s;
 }
@@ -82,7 +86,7 @@ void	swap(t_stack **a)
 {
 	t_stack		*tmp;
 
-	if (counter(*a) < 2)
+	if (counter(a) < 2)
 		return ;
 	tmp = (*a)->next;
 	(*a)->next = tmp->next;

@@ -6,7 +6,7 @@
 /*   By: pwildcat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 16:22:01 by pwildcat          #+#    #+#             */
-/*   Updated: 2022/01/25 16:22:26 by pwildcat         ###   ########.fr       */
+/*   Updated: 2022/02/25 19:16:17 by pwildcat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ra(t_stack **a)
 	t_stack		*tmp;
 	t_stack		*second;
 
-	if (counter(*a) < 2)
+	if (counter(a) < 2)
 		return ;
 	tmp = (*a);
 	second = (*a)->next;
@@ -38,7 +38,7 @@ void	rb(t_stack **a)
 	t_stack		*tmp;
 	t_stack		*second;
 
-	if (counter(*a) < 2)
+	if (counter(a) < 2)
 		return ;
 	tmp = (*a);
 	second = (*a)->next;
@@ -56,7 +56,7 @@ void	rra(t_stack **a)
 	t_stack	*tmp;
 	t_stack	*prev;
 
-	if (counter(*a) < 2)
+	if (counter(a) < 2)
 		return ;
 	tmp = (*a);
 	prev = NULL;
@@ -77,7 +77,7 @@ void	rrb(t_stack **a)
 	t_stack	*tmp;
 	t_stack	*prev;
 
-	if (counter(*a) < 2)
+	if (counter(a) < 2)
 		return ;
 	tmp = (*a);
 	prev = NULL;

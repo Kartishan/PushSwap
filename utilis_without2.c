@@ -8,7 +8,7 @@ void	ra_without(t_stack **a)
 	t_stack		*tmp;
 	t_stack		*second;
 
-	if (counter(*a) < 2)
+	if (counter(a) < 2)
 		return ;
 	tmp = (*a);
 	second = (*a)->next;
@@ -24,7 +24,7 @@ void	rb_without(t_stack **a)
 	t_stack		*tmp;
 	t_stack		*second;
 
-	if (counter(*a) < 2)
+	if (counter(a) < 2)
 		return ;
 	tmp = (*a);
 	second = (*a)->next;
@@ -40,7 +40,7 @@ void	rra_without(t_stack **a)
 	t_stack	*tmp;
 	t_stack	*prev;
 
-	if (counter(*a) < 2)
+	if (counter(a) < 2)
 		return ;
 	tmp = (*a);
 	prev = NULL;
@@ -59,7 +59,7 @@ void	rrb_without(t_stack **a)
 	t_stack	*tmp;
 	t_stack	*prev;
 
-	if (counter(*a) < 2)
+	if (counter(a) < 2)
 		return ;
 	tmp = (*a);
 	prev = NULL;

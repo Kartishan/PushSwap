@@ -20,7 +20,7 @@ void	rotate(t_stack **a)
 	t_stack		*tmp;
 	t_stack		*second;
 
-	if (counter(*a) < 2)
+	if (counter(a) < 2)
 		return ;
 	tmp = (*a);
 	second = (*a)->next;
@@ -36,7 +36,7 @@ void	reversrotate(t_stack **a)
 	t_stack	*tmp;
 	t_stack	*prev;
 
-	if (counter(*a) < 2)
+	if (counter(a) < 2)
 		return ;
 	tmp = (*a);
 	prev = NULL;
@@ -63,22 +63,19 @@ int	main(int argc, char **argv)
 {
 	t_stack	*a;
 	t_stack	*b;
-	int		c;
 
 	a = input_memory();
 	b = input_memory();
 	argc--;
-	c = 0;
-	g_global = 0;
 	while (argc > 0)
 	{
-		push(&a, ft_atoi(argv[argc]), c);
-		c++;
+		push(&a, ft_atoi(argv[argc]));
 		argc--;
 	}
+	init_index(&a);
 	QuickSort(&a, &b);
-	show(a);
+	//show(a);
 	free_memory(&a);
 	free_memory(&b);
-	return (0);
+	exit(0);
 }
