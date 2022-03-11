@@ -68,10 +68,8 @@ int	sort_for_check(t_stack **a, t_stack **b)
 			break ;
 		i++;
 		if (make_all_actions(a, b, s))
-		{
-			free (s);
 			return (-1);
-		}
+		free (s);
 	}
 	return (i);
 }
