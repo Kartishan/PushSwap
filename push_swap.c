@@ -55,8 +55,6 @@ int	main(int argc, char **argv)
 	t_stack	*a;
 	t_stack	*b;
 
-	a = input_memory();
-	b = input_memory();
 	argc--;
 	while (argc > 0)
 	{
