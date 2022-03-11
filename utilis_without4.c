@@ -23,7 +23,6 @@ void	ss_without(t_stack **a, t_stack **b)
 
 void	rrr_without(t_stack **a, t_stack **b)
 {
-	rra(a);
-	rrb(b);
-	write(1, "rrr\n", 4);
+	rra_without(a);
+	rrb_without(b);
 }
