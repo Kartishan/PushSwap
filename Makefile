@@ -1,4 +1,5 @@
 NAME =  push_swap
+NAME_B = checker
 
 SRCS =	function1.c function2.c function3.c push_swap.c \
 		find.c index.c free.c utilis_without3.c sortfor5elem.c\
@@ -29,5 +30,5 @@ bonus	: get $(OBJ_B) ${HEADER}
 clean :
 	rm -f $(OBJ) $(OBJ_B) *bonus.o && cd libft && make -f MakefileLibft clean
 fclean : clean
-	@$(RM) $(NAME) && cd libft && make -f MakefileLibft fclean
+	@$(RM) $(NAME) $(NAME_B) && cd libft && make -f MakefileLibft fclean
 re : fclean all

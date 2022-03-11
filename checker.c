@@ -85,8 +85,6 @@ int	main(int argc, char **argv)
 	ans = 0;
 	if (argc == 1 || sort_check(argc, argv))
 		return (0);
-	a = input_memory();
-	b = input_memory();
 	argc--;
 	while (argc > 0)
 	{
