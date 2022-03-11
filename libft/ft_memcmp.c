@@ -1,40 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newsort.c                                          :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pwildcat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/26 17:14:59 by pwildcat          #+#    #+#             */
-/*   Updated: 2022/01/26 17:15:05 by pwildcat         ###   ########.fr       */
+/*   Created: 2021/10/06 11:40:23 by pwildcat          #+#    #+#             */
+/*   Updated: 2021/10/06 11:40:25 by pwildcat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "struct.h"
-#include <unistd.h>
-#include <stdio.h>
-#include <stdlib.h>
+#include  "libft.h"
 
-// void	swap(t_stack **a, t_stack **b)
-// {
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
+{
+	unsigned char	*p;
+	unsigned char	*q;
 
-// }
-
-// void	mysort(t_stack **a, t_stack **b, int n)
-// {
-// 	int	i;
-// 	int	j;
-
-// 	i = 0;
-// 	while (i < n)
-// 	{
-// 		j = i;
-// 		while (j > 0)
-// 		{
-// 			j--;
-// 			swap(&a, &b);
-// 		}
-// 		ra(&a);
-// 		i++;
-// 	}
-// }
+	p = (unsigned char *)s1;
+	q = (unsigned char *)s2;
+	while (n > 0)
+	{
+		if (*p != *q)
+		{
+			return (*p - *q);
+		}
+		p++;
+		q++;
+		n--;
+	}
+	return (0);
+}
