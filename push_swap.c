@@ -50,16 +50,7 @@ void	reversrotate(t_stack **a)
 	prev->next = NULL;
 }
 
-void	show(t_stack *a)
-{
-	while (a != NULL)
-	{
-		printf("%d\n", a->data);
-		a = a->next;
-	}
-}
-
-void	main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_stack	*a;
 	t_stack	*b;
@@ -73,8 +64,7 @@ void	main(int argc, char **argv)
 		argc--;
 	}
 	init_index(&a);
-	QuickSort(&a, &b);
-	//show(a);
+	quicksort(&a, &b);
 	free_memory(&a);
 	free_memory(&b);
 	exit(0);

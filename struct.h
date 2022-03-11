@@ -11,7 +11,13 @@
 /* ************************************************************************** */
 
 #ifndef STRUCT_H
+
 # define STRUCT_H
+# include "./libft/libft.h"
+# include "./gnl/get_next_line.h"
+# include <unistd.h>
+# include <stdio.h>
+# include <stdlib.h>
 
 typedef struct s_stack
 {
@@ -20,7 +26,14 @@ typedef struct s_stack
 	int				index;
 }	t_stack;
 
-int		g_global;
+typedef struct s_additional
+{
+	int	ac;
+	int	bc;
+	int	pivot;
+	int	i;
+}	t_additional;
+
 int		ft_space(const char *str);
 int		ft_atoi(const char *str);
 int		counter(t_stack **a);
@@ -56,8 +69,6 @@ void	rrb_without(t_stack **a);
 int		sort(t_stack **s);
 void	insertion_sort_without(t_stack **a, t_stack **b);
 void	vibor_without(t_stack **a, t_stack **b);
-void	our_rr_without(t_stack **a, t_stack **b, int c);
-void	our_reverse_without(t_stack **a, t_stack **b, int c);
 int		sorted_without(t_stack *s);
 int		search_without(t_stack *a, t_stack *b);
 void	modified_insertion_sort(t_stack **a, t_stack **b);
@@ -67,12 +78,12 @@ void	sort4elemwithparam(t_stack **a, t_stack **b);
 void	free_memory(t_stack **s);
 t_stack	*memory(void);
 t_stack	*input_memory(void);
-void	QuickA(t_stack **a, t_stack **b, int n, int flag);
-int		ace(t_stack **a, int pivot, int n);
+void	quick_a(t_stack **a, t_stack **b, int n, int flag);
+int		acheck(t_stack **a, int pivot, int n);
 void	checkb(t_stack **a, t_stack **b, int n);
 int		bce(t_stack **b, int pivot, int n);
-void	QuickB(t_stack **a, t_stack **b, int n, int flag);
-void	QuickSort(t_stack **a, t_stack **b);
+void	quick_b(t_stack **a, t_stack **b, int n, int flag);
+void	quicksort(t_stack **a, t_stack **b);
 void	paforn(t_stack **a, t_stack **b, int n);
 void	pbforn(t_stack **a, t_stack **b, int n);
 int		find_min(t_stack *s, int n);
@@ -82,4 +93,14 @@ int		asort(t_stack **s, int n);
 int		bsort(t_stack **s, int n);
 void	analiseforsmall(t_stack **a, t_stack **b, int n);
 void	init_index(t_stack **s);
+void	ss_without(t_stack **a, t_stack **b);
+void	rrr_without(t_stack **a, t_stack **b);
+int		ra_return(t_stack **a);
+int		rb_return(t_stack **a);
+int		pa_return(t_stack **a, t_stack **b);
+int		pb_return(t_stack **a, t_stack **b);
+int		check_arguments(int argc, char **argv);
+int		ft_isnum(char *argv);
+void	rr(t_stack **a, t_stack **b);
+void	rr_without(t_stack **a, t_stack **b);
 #endif

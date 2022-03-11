@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   quicksort.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pwildcat <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/11 16:29:39 by pwildcat          #+#    #+#             */
+/*   Updated: 2022/03/11 16:29:40 by pwildcat         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "struct.h"
 #include <unistd.h>
 #include <stdio.h>
@@ -73,4 +85,12 @@ int	bsort(t_stack **s, int n)
 		return (1);
 	else
 		return (0);
+}
+
+void	checkb(t_stack **a, t_stack **b, int n)
+{
+	if (n == 2 && !bsort(b, n))
+		sb(b);
+	while (n-- > 0)
+		pa(a, b);
 }

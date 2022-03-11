@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checfunction.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pwildcat <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/11 16:27:41 by pwildcat          #+#    #+#             */
+/*   Updated: 2022/03/11 16:27:42 by pwildcat         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "struct.h"
 #include <unistd.h>
 #include <stdio.h>
@@ -14,6 +26,25 @@ int	check_input(char *arg)
 	if (ft_strlen(arg) > 10 && arg[0] != '-')
 		return (1);
 	return (0);
+}
+
+int	ft_isnum(char *argv)
+{
+	int	i;
+
+	i = 0;
+	if (argv[i] == '-')
+	{
+		i++;
+		if (argv[i] == '\0')
+			return (0);
+	}
+	while (ft_isdigit(argv[i]))
+		i++;
+	if (argv[i] == '\0')
+		return (1);
+	else
+		return (0);
 }
 
 int	check_first(int argc, char **argv)

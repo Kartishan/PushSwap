@@ -19,24 +19,32 @@ void	sa(t_stack **a)
 {
 	t_stack		*tmp;
 
+	if (counter(a) <= 1)
+	{
+		write(1, "sa\n", 3);
+		return ;
+	}
 	tmp = (*a)->next;
 	(*a)->next = tmp->next;
 	tmp->next = (*a);
 	(*a) = tmp;
 	write(1, "sa\n", 3);
-	g_global++;
 }
 
 void	sb(t_stack **a)
 {
 	t_stack		*tmp;
 
+	if (counter(a) <= 1)
+	{
+		write(1, "sa\n", 3);
+		return ;
+	}
 	tmp = (*a)->next;
 	(*a)->next = tmp->next;
 	tmp->next = (*a);
 	(*a) = tmp;
 	write(1, "sb\n", 3);
-	g_global++;
 }
 
 void	ss(t_stack **a, t_stack **b)
@@ -44,18 +52,16 @@ void	ss(t_stack **a, t_stack **b)
 	sa_without(a);
 	sb_without(b);
 	write(1, "ss\n", 3);
-	g_global++;
 }
 
 void	pa(t_stack **a, t_stack **b)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
 	tmp = *b;
 	*b = (*b)->next;
 	tmp->next = *a;
 	*a = tmp;
-	g_global++;
 	write(1, "pa\n", 3);
 }
 
@@ -67,6 +73,5 @@ void	pb(t_stack **a, t_stack **b)
 	*a = (*a)->next;
 	tmp->next = *b;
 	*b = tmp;
-	g_global++;
 	write(1, "pb\n", 3);
 }

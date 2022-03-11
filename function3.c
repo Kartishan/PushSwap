@@ -20,6 +20,11 @@ void	ra(t_stack **a)
 	t_stack		*tmp;
 	t_stack		*second;
 
+	if (counter(a) <= 1)
+	{
+		write(1, "ra\n", 3);
+		return ;
+	}
 	tmp = (*a);
 	second = (*a)->next;
 	while (tmp->next != NULL)
@@ -28,7 +33,6 @@ void	ra(t_stack **a)
 	(*a)->next = NULL;
 	(*a) = second;
 	write(1, "ra\n", 3);
-	g_global++;
 }
 
 void	rb(t_stack **a)
@@ -36,6 +40,11 @@ void	rb(t_stack **a)
 	t_stack		*tmp;
 	t_stack		*second;
 
+	if (counter(a) <= 1)
+	{
+		write(1, "rb\n", 3);
+		return ;
+	}
 	tmp = (*a);
 	second = (*a)->next;
 	while (tmp->next != NULL)
@@ -44,7 +53,6 @@ void	rb(t_stack **a)
 	(*a)->next = NULL;
 	(*a) = second;
 	write(1, "rb\n", 3);
-	g_global++;
 }
 
 void	rra(t_stack **a)
@@ -54,6 +62,11 @@ void	rra(t_stack **a)
 
 	tmp = (*a);
 	prev = NULL;
+	if (counter(a) <= 1)
+	{
+		write(1, "rra\n", 4);
+		return ;
+	}
 	while (tmp->next != NULL)
 	{
 		prev = tmp;
@@ -63,7 +76,6 @@ void	rra(t_stack **a)
 	(*a) = tmp;
 	prev->next = NULL;
 	write(1, "rra\n", 4);
-	g_global++;
 }
 
 void	rrb(t_stack **a)
@@ -73,6 +85,11 @@ void	rrb(t_stack **a)
 
 	tmp = (*a);
 	prev = NULL;
+	if (counter(a) <= 1)
+	{
+		write(1, "rrb\n", 4);
+		return ;
+	}
 	while (tmp->next != NULL)
 	{
 		prev = tmp;
@@ -82,13 +99,11 @@ void	rrb(t_stack **a)
 	(*a) = tmp;
 	prev->next = NULL;
 	write(1, "rrb\n", 4);
-	g_global++;
 }
 
 void	rrr(t_stack **a, t_stack **b)
 {
-	rra(a);
-	rrb(b);
+	rra_without(a);
+	rrb_without(b);
 	write(1, "rrr\n", 4);
-	g_global++;
 }

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   bubblesort.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pwildcat <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/11 16:27:18 by pwildcat          #+#    #+#             */
+/*   Updated: 2022/03/11 16:27:19 by pwildcat         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "struct.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -39,10 +51,7 @@ void	bubblesort(t_stack **a, t_stack **b, int an)
 			if ((*a)->data > (*a)->next->data)
 				sa(a);
 			if (!asort(a, an - bn))
-			{
-				bn++;
-				pb(a, b);
-			}
+				bn += pb_return(a, b);
 		}
 		while (bn - i > 0)
 		{
