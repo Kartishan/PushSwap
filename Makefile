@@ -3,7 +3,7 @@ NAME_B = checker
 
 SRCS =	function1.c function2.c function3.c push_swap.c \
 		find.c index.c free.c utilis_without3.c sortfor5elem.c\
-		sortfor3elem.c utilis_return.c\
+		sortfor3elem.c utilis_return.c checfunction.c\
 		sortfor4elem.c utilis_without.c utilis_without2.c quicksort.c myquick.c bubblesort.c
 
 SRCS_B = checker.c checfunction.c utilis_without.c utilis_without2.c utilis_without3.c  utilis_without4.c free.c\
@@ -19,7 +19,8 @@ CFLAGS = -Wall -Wexra -Werror -I$(HEADER)
 all : $(NAME)
 
 $(NAME)	:	$(OBJ) $(HEADER)
-	gcc $(CFLAGS) $(OBJ) -o $@
+	cd libft && make -f MakefileLibft
+	gcc $(CFLAGS) $(OBJ) -o $@ -L ./libft -lft
 %.o		:	%.c $(HEADER)
 	gcc $(FLAGS) -c $< -o $@
 get :

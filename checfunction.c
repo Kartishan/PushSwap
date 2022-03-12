@@ -19,11 +19,11 @@ int	check_input(char *arg)
 {
 	if (!ft_isnum(arg))
 		return (1);
+	if ((ft_strlen(arg) > 10 && arg[0] != '-') || ft_strlen(arg) > 11)
+		return (1);
 	if (ft_strlen(arg) == 10 && ft_strncmp(arg, "2147483647", 10) > 0)
 		return (1);
 	if (ft_strlen(arg) == 11 && ft_strncmp(arg, "-2147483648", 11) > 0)
-		return (1);
-	if (ft_strlen(arg) > 10 && arg[0] != '-')
 		return (1);
 	return (0);
 }
@@ -66,6 +66,16 @@ int	check_first(int argc, char **argv)
 	}
 	if (m == 1 && p == 1)
 		return (1);
+	return (0);
+}
+
+int	sort_check(int argc, char **argv)
+{
+	if (check_arguments(argc, argv))
+	{
+		write(1, "Error\n", 6);
+		return (1);
+	}
 	return (0);
 }
 

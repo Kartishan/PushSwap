@@ -55,6 +55,8 @@ int	main(int argc, char **argv)
 	t_stack	*a;
 	t_stack	*b;
 
+	if (check_arguments(argc, argv))
+		return (write(1, "Error\n", 6));
 	argc--;
 	while (argc > 0)
 	{
